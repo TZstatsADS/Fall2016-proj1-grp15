@@ -125,6 +125,17 @@ state_choropleth(after_stem_POW,
 
 #2 wage&wkhp&wkw&povpip&schl-stem/nonstem-before/after
 #survey weight
+library(survey)
+df_before<-svrepdesign(variables=before_data[,1:16], 
+                 repweights=before_data[,17:86], type="BRR",combined.weights=TRUE,
+                 weights=before_data$PWGTP)
+summary(df_before)
+svymean(~ WAGP,df_before, na.rm = T)
+df_after<-svrepdesign(variables=after_data[,1:16], 
+                       repweights=after_data[,17:86], type="BRR",combined.weights=TRUE,
+                       weights=after_data$PWGTP)
+summary(df_before)
+svymean(~ WAGP,df_before, na.rm = T)
 
 radardata <- data.frame(group = character(), wage = numeric(), hr_per_wk = numeric, wk_per_yr = numeric(), income_to_poverty = numeric(), degree = numeric())
 radardata <- rbind(radardata, data.frame(group = "before_stem", wage = mean(before_stem$WAGP), hr_per_wk=mean(before_stem$WKHP), wk_per_yr=mean(before_stem$WKW), income_to_poverty=mean(before_stem$POVPIP,na.rm=TRUE), degree=mean(before_stem$SCHL)))
