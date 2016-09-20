@@ -3,15 +3,14 @@
 
 Term: Fall 2016
 
-+ Team #
-+ Projec title: Lorem ipsum dolor sit amet
++ Team #15
++ Projec title: Influence of STEM majors
 + Team members
-	+ team member 1
-	+ team member 2
-	+ team member 3
-	+ team member 4
-	+ team member 5
-+ Project summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	+ Yaqing Xie
+	+ Qing Yin
+	+ Xiaohan Zhang
+	+ Yueqi Zhang
++ Project summary: In this project, we basically analyze how STEM policy influences the whole American Society, including the citizens and the non-citizens. Our analysis contains three parts: (1) how does STEM policy influences college students, especially international students, (2) how does STEM policy influences graduated students, and (3) how does STEM policy influences employment situation. For part (1) and part (2), we use several data sets of recent years to obtain the trends of the major selections of college students and the employment rates of graduated students. Also, we show how international students distribute all over the United States to try to understand the relationship between geographic factors and STEM fields and how graduated students distribute in different fields to try to understand whether STEM-major students finally find jobs in STEM fields. For part (3), we use data sets from 2007 and 2014 in order to compare the employment situations before and after the STEM policy. During the analyzing process, we clean our data sets, do exploratory data analysis, do some prediction, visualize our data, etc. We hope this project will leave a deep impression to the class.
 	
 **Contribution statement**: ([default](doc/a_note_on_contributions.md)) All team members contributed equally in all stages of this project. All team members approve our work presented in this GitHub repository including this contributions statement. 
 
@@ -26,5 +25,5 @@ proj/
 └── output/
 ```
 
-Please see each subfolder for a README file.
+Please see each subfolder for a README file where you can find what materials are in each subfolder.
 
