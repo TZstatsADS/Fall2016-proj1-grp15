@@ -124,8 +124,6 @@ state_choropleth(after_stem_POW,
                  num_colors = 1)
 
 #2 wage&wkhp&wkw&povpip&schl-stem/nonstem-before/after
-#survey weight
-
 radardata <- data.frame(group = character(), wage = numeric(), hr_per_wk = numeric, wk_per_yr = numeric(), income_to_poverty = numeric(), degree = numeric())
 radardata <- rbind(radardata, data.frame(group = "before_stem", wage = mean(before_stem$WAGP), hr_per_wk=mean(before_stem$WKHP), wk_per_yr=mean(before_stem$WKW), income_to_poverty=mean(before_stem$POVPIP,na.rm=TRUE), degree=mean(before_stem$SCHL)))
 radardata <- rbind(radardata, data.frame(group = "before_nonstem", wage = mean(before_nonstem$WAGP), hr_per_wk=mean(before_nonstem$WKHP), wk_per_yr=mean(before_nonstem$WKW), income_to_poverty=mean(before_nonstem$POVPIP,na.rm=TRUE), degree=mean(before_nonstem$SCHL)))
@@ -146,7 +144,7 @@ radarchart(radardata2 , axistype=1 ,
            caxislabels = c('Min            ','','','','Max         '),
            cglwd=0.5
 )
-legend(x=0.9, y=1.4, legend = radardata[,1], bty = "n", pch=20 , col=colors_border , cex=0.9, pt.cex=1)
+legend(x=1, y=1.4, legend = radardata[,1], bty = "n", pch=20 , col=colors_border , cex=0.9, pt.cex=1)
 title("Changes in Working Conditions After STEM Policy Went Out ", cex.main=1)
 
 #3 cow, sex
