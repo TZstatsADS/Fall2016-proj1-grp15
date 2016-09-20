@@ -188,7 +188,9 @@ ggplot(datm,aes(x = variable, y = value,fill = Class)) +
   geom_bar(position = "fill",stat = "identity") + 
   theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
   ggtitle("Changes in Class of Work After STEM Policy Went Out") +
-  theme(plot.title = element_text(size = rel(1),face="bold"))
+  theme(plot.title = element_text(size = rel(1),face="bold")) +
+  xlab("") +
+  ylab("Component Proportion")
 
 colors_in1=c('rosybrown1', 'lightsteelblue2')
 colors_in2=c('rosybrown3', 'lightsteelblue4')
