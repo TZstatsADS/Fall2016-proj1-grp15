@@ -248,5 +248,6 @@ ggplot(data=naturalized_age,
        geom_line()+
        theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
        ggtitle("Changes in Age of Entry Among Immigrants") +
-       theme(plot.title = element_text(size = rel(1),face="bold"))
+       theme(plot.title = element_text(size = rel(1),face="bold")) +
+       ylab("Proportion")
 
