@@ -144,7 +144,7 @@ radarchart(radardata2 , axistype=1 ,
            caxislabels = c('Min            ','','','','Max         '),
            cglwd=0.5
 )
-legend(x=1, y=1.4, legend = radardata[,1], bty = "n", pch=20 , col=colors_border , cex=0.9, pt.cex=1)
+legend(x=0.9, y=1.4, legend = radardata[,1], bty = "n", pch=20 , col=colors_border , cex=0.9, pt.cex=1)
 title("Changes in Working Conditions After STEM Policy Went Out ", cex.main=1)
 
 #3 cow, sex
