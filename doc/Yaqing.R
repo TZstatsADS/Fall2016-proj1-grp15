@@ -6,7 +6,7 @@ library(choroplethr)
 library(choroplethrMaps)
 
 #read data
-cols <- c("WAGP", "ST", "AGEP", "ESR", "CIT", "YOEP", "COW", "SEX" , "WKHP","WKW","SOCP","POWSP","POVPIP","SCHL")
+cols <- c("WAGP", "ST", "AGEP", "ESR", "CIT", "YOEP", "COW", "SEX" , "WKHP","WKW","SOCP","POWSP","POVPIP","SCHL", "PWGTP")
 
 before_data11<-fread("/Users/YaqingXie/Desktop/Applied Data Science/Week1/csv_pus(2007)/ss07pusa.csv", select=cols)
 before_data12<-fread("/Users/YaqingXie/Desktop/Applied Data Science/Week1/csv_pus(2007)/ss07pusa.csv", select=c(160:239))
@@ -84,6 +84,7 @@ after_state_stem <- subset(after_stem, select=c("ST","POWSP"))
 after_nonstem <- after_data[after_data$SOCP == 'NON-STEM']
 after_state_nonstem <- subset(after_nonstem, select=c("ST","POWSP"))
 
+data("state.regions")
 statenames <- data.frame(cbind(state.regions[,1],state.regions[,3]))
 names(statenames) <- c('region', 'region_code')
 
@@ -122,17 +123,27 @@ state_choropleth(after_stem_POW,
                  title      = "After STEM Policy: STEM Job Allocation",
                  legend     = "Number of Occupations",
                  num_colors = 1)
+state_choropleth(before_stem_POW,
+                 title      = "Before STEM Policy: STEM Job Allocation",
+                 legend     = "Number of Occupations",
+                 num_colors = 1,
+                 zoom = c("new york","pennsylvania","virginia","ohio","north carolina","south carolina","georgia","florida"))
+state_choropleth(after_stem_POW,
+                 title      = "After STEM Policy: STEM Job Allocation",
+                 legend     = "Number of Occupations",
+                 num_colors = 1,
+                 zoom = c("new york","pennsylvania","virginia","ohio","north carolina","south carolina","georgia","florida"))
 
 #2 wage&wkhp&wkw&povpip&schl-stem/nonstem-before/after
 #survey weight
 library(survey)
-df_before<-svrepdesign(variables=before_data[,1:16], 
-                 repweights=before_data[,17:86], type="BRR",combined.weights=TRUE,
+df_before<-svrepdesign(variables=before_data[,1:15], 
+                 repweights=before_data[,16:95], type="BRR",combined.weights=TRUE,
                  weights=before_data$PWGTP)
 summary(df_before)
 svymean(~ WAGP,df_before, na.rm = T)
-df_after<-svrepdesign(variables=after_data[,1:16], 
-                       repweights=after_data[,17:86], type="BRR",combined.weights=TRUE,
+df_after<-svrepdesign(variables=after_data[,1:15], 
+                       repweights=after_data[,16:95], type="BRR",combined.weights=TRUE,
                        weights=after_data$PWGTP)
 summary(df_before)
 svymean(~ WAGP,df_before, na.rm = T)
