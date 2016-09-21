@@ -962,6 +962,7 @@ state_choropleth(after_stem_POW,
 In general, the state allocation of jobs didn't change dramatically after the STEM policy went out. It could be plausible since STEM policy is in effect for foreign students while the job allocation depends more on the locational choices of different companies.
 
 
+
 #### (2) Working Conditions: What to Pay and What to Get
 
 The second figure we got is a radar chart considering income, working hours/weeks, degree level and income-to-poverty index.
@@ -1122,6 +1123,16 @@ ggplot(data=naturalized_age,
        theme(plot.title = element_text(size = rel(1),face="bold")) +
        ylab("Proportion")
 ```
+
+
+## Some Problems We Faced
+
+1. When we do the circular plot, we originally want to use *circlize* package in R, but we find that the plots from this package are not dynamic. Then, we are thinking whether we can do dynamic circular plot without directly using JavaScript. After searching, we find an interesting package *recharts*, which can be used to draw dynamic circular plots. Thanks to this package, we can derive the major vs working field mappings.
+
+2. One problem we meet is that there is no STEM/non-STEM classification for each major. Therefore, we go to the official website for STEM/non-STEM classifications and finally decide the classification for each major.
+
+3. The other problem is that which variables we should use during our analysis. For example, which variables can reflect the employment status? As for this, we decide to study the employment status of current year, then we use the variable OCCP.
+
 
 ## Summary
 
