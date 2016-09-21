@@ -4,6 +4,7 @@ library(ggplot2)
 library(fmsb)
 library(choroplethr)
 library(choroplethrMaps)
+library(recharts)
 
 #read data
 cols <- c("WAGP", "ST", "AGEP", "ESR", "CIT", "YOEP", "COW", "SEX" , "WKHP","WKW","SOCP","POWSP","POVPIP","SCHL", "PWGTP")
