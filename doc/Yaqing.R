@@ -195,7 +195,7 @@ sex[,4] = sex[,4]/sum(sex[,4])
 sex[,5] = sex[,5]/sum(sex[,5])
 
 cow_melt = melt(cow, id.vars = c('Class'))
-ggplot(datm,aes(x = variable, y = value,fill = Class)) + 
+ggplot(cow_melt,aes(x = variable, y = value,fill = Class)) + 
   geom_bar(position = "fill",stat = "identity") + 
   theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
   ggtitle("Changes in Class of Work After STEM Policy Went Out") +
@@ -230,10 +230,10 @@ after_naturalize <- after_data[after_data$CIT == 4]
 before_naturalize$AGEOFENTRY <- before_naturalize$YOEP - (2007 - before_naturalize$AGEP)
 after_naturalize$AGEOFENTRY <- after_naturalize$YOEP - (2014 - after_naturalize$AGEP)
 
-before_naturalize_stem <- before_naturalized[before_naturalize$SOCP == 'STEM']
-before_naturalize_nonstem <- before_naturalized[before_naturalize$SOCP == 'NON-STEM']
-after_naturalize_stem <- after_naturalized[after_naturalize$SOCP == 'STEM']
-after_naturalize_nonstem <- after_naturalized[after_naturalize$SOCP == 'NON-STEM']
+before_naturalize_stem <- before_naturalize[before_naturalize$SOCP == 'STEM']
+before_naturalize_nonstem <- before_naturalize[before_naturalize$SOCP == 'NON-STEM']
+after_naturalize_stem <- after_naturalize[after_naturalize$SOCP == 'STEM']
+after_naturalize_nonstem <- after_naturalize[after_naturalize$SOCP == 'NON-STEM']
 
 before_naturalize_age_stem <- cut(before_naturalize_stem$AGEOFENTRY, seq(0,100,length.out=21))
 before_naturalize_age_stem <- data.frame(table(before_naturalize_age_stem))
