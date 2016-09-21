@@ -9,8 +9,8 @@ In this project, we basically analyze how STEM policy influences the whole Ameri
 In part (1), we use several data sets to understand how STEM degrees develop into STEM jobs. 
 In part (2), we use data sets from 2007 and 2014 to compare the employment situations and working conditions before and after the announcement of the STEM policy. 
 
-Team member: Yaqing Xie
-             Qing Yin
+Team member: Yaqing Xie,
+             Qing Yin,
              Yueqi Zhang
 
 # Part 1. Influences of STEM policy on graduated students
@@ -606,8 +606,8 @@ options(op)
 
 #### (3) Industry Choice After Graduation
 
-To further study how people of specific STEM degree go into different industries, we draw the following circular plots. Each plot corresponses to either citizen or non-citizen and either STEM degree or non-STEM degree.
-These figures suggest a lot of information but due to the time constraints, we will not talk about them during this presentation.
+To further study how people of specific STEM degree go into different industries, we draw the following circular plots. Each plot corresponds to either citizen or non-citizen and either STEM degree or non-STEM degree.
+These figures suggest a lot of information but due to the time constraints, we will not talk much about them during this presentation.
 ```{r}
 # Now, I will do circular plots for majors in stem vs occupation and majors in non-stem vs occupation for citizens and non-citizens.
 pus14citstem<-pus14cit[pus14cit$STEM==1,]
@@ -810,9 +810,6 @@ In this part of analysis, we want to know how STEM jobs have changed along with 
 
 ### **3. Our Findings**
 
-The first thing we studied is whether the STEM/non-STEM job allocation has changed geographically.
-According to the first two figures, we can see that the allocation of non-STEM jobs barely changed after STEM policy went out.
-According to the last two figures, we see for STEM jobs, something happened on the east coast.
 ```{r}
 library(data.table)
 library(dplyr)
@@ -892,6 +889,10 @@ after_data$WKW[after_data$WKW==6] <- 7
 
 #### (1) Job Allocation in US
 
+The first thing we studied is whether the STEM/non-STEM job allocation has changed geographically.
+According to the first two figures, we can see that the allocation of non-STEM jobs barely changed after STEM policy went out.
+According to the last two figures, we see for STEM jobs, something happened on the east coast.
+
 ```{r}
 # plotting
 # 1 POWSP-stem/nonstem-before/after  MAP
@@ -968,9 +969,9 @@ In general, the state allocation of jobs didn't change dramatically after the ST
 The second figure we got is a radar chart considering income, working hours/weeks, degree level and income-to-poverty index.
 
 STEM jobs used to be the kind of jobs in which you need to pay more in order to get more. The good thing was, you didn't need to have an advanced degree to get such kind of jobs.
-Howeverm after STEM policy went out, the requirement of degree in STEM jobs raised sharply. Though the change in non-STEM jobs is great too, STEM jobs are still the group which requires the highest average degree attainment.
+However, after STEM policy went out, the requirement of degree in STEM jobs raised sharply. Though the change in non-STEM jobs is great too, STEM jobs is still the group which requires the highest average degree attainment.
 
-We can also read more information from this figure, such as, currently, the better income/degree performance appears to STEM jobs instead of non-STEM jobs and the gap is quite obvious. However, speaking of income/working hours, non-STEM job could be a better choice.
+We can also read more information from this figure, such as, currently, the better income/degree performance appears in STEM jobs instead of non-STEM jobs and the gap is quite obvious. However, speaking of income/working hours, non-STEM job could be a better choice.
 ```{r}
 # 2 wage&wkhp&wkw&povpip&schl-stem/nonstem-before/after
 # survey weight
@@ -1015,7 +1016,7 @@ title("Changes in Working Conditions After STEM Policy Went Out ", cex.main=1)
 
 Now let's study the class of work structure and gender structure in STEM/non-STEM jobs.
 
-While the class of work structure of non-STEM jobs remains almost the same after STEM policy went out, we could tell the change of STEM jobs structure in the past decade. Compared to non-STEM group, less STEM jobs are of self-employed or for not-for-profit organizations. Instead, STEM people tend to stay at for-profit companies. This change could be relevant to both the change of the STEM industries and the thought conversion of STEM people. It's likely that for these people, for-profit company is the option which allows better self-fulfillment.
+While the class of work structure of non-STEM jobs remains almost the same after STEM policy went out, we could tell the change of STEM jobs structure in the past decade. Currently, less STEM jobs are of self-employed or for not-for-profit organizations. Instead, STEM people tend to stay at for-profit companies. This change could be relevant to both the change of the STEM industries and the thought conversion of STEM people. It's likely that for these people, for-profit company is the option which allows better self-fulfillment.
 ```{r}
 # 3 cow, sex
 cow <- data.frame(table(before_stem$COW))
