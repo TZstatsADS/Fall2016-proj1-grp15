@@ -570,11 +570,20 @@ msw14ncit[,2]<-as.factor(msw14ncit[,2])
 msw14ncit[,3]<-as.numeric(msw14ncit[,3])
 
 library(googleVis)
+op<-options(gvis.plot.tag='chart')
+sankeycit<-gvisSankey(msw14cit,from="origin",to="visit",weight="weight",options=list(height=700,width=900,sankey="{link:{color:{fill:'deepskyblue'}},node:{width:20,label:{fontSize:12,bold:true}}}"))
+plot(sankeycit)
+sankeynoncit<-gvisSankey(msw14ncit,from="origin",to="visit",weight="weight",options=list(height=700,width=900,sankey="{link:{color:{fill:'mediumspringgreen'}},node:{width:20,label:{fontSize:12,bold:true}}}"))
+print(sankeynoncit,'chart')
+options(op)
+```
+
+library(googleVis)
 
 plot(gvisSankey(msw14cit,from="origin",to="visit",weight="weight",options=list(height=700,width=1500,sankey="{link:{color:{fill:'deepskyblue'}},node:{width:20,label:{fontSize:12,bold:true}}}")))
 
 plot(gvisSankey(msw14ncit,from="origin",to="visit",weight="weight",options=list(height=700,width=1500,sankey="{link:{color:{fill:'mediumspringgreen'}},node:{width:20,label:{fontSize:12,bold:true}}}")))
-```
+
 By now, I have finished the Sankey plot. 
 
 Next, I will do Circular plot.
@@ -1048,7 +1057,7 @@ legend(x=1.5,y=0.,legend=c('',''),col=c('white','grey'),bty = "n",  pch=20 ,cex=
 legend(x=1.475,y=0.05,pt.cex=1.4, bty = "n", legend = c(""), pch = 21)
 text('stem', x=1.2, y=-0.11,cex=0.8)
 text('non-stem', x=1.25, y=-0.25,cex=0.8)
-title("Changes in Gender Proportion of Jobs After STEM Policy Went Out")
+title("Changes in Gender Proportion of Jobs After STEM Policy Went Out",cex=0.8)
 ```
 
 STEM jobs used to be kind of jobs in which you need to pay more in order to get more. The good thing was, you didn't need to have an advanced degree to get such kind of jobs.
